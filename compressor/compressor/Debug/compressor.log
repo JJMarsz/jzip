@@ -1,8 +1,9 @@
 ﻿  compressor.cpp
-c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(87): warning C4018: '<': signed/unsigned mismatch
-c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(134): warning C4018: '<': signed/unsigned mismatch
-c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(154): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
-c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(166): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
-c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(176): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
-c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(183): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(96): warning C4018: '<': signed/unsigned mismatch
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(143): warning C4018: '<': signed/unsigned mismatch
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(168): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(195): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(205): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(212): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(219): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
   compressor.vcxproj -> C:\Users\Jacob\Desktop\Projects\compressor\compressor\Debug\compressor.exe
