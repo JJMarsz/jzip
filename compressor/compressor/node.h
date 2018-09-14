@@ -47,32 +47,34 @@ struct dataNode_t {
 	Contains the raw data that will be used in a reference
 	*/
 
-	dataNode_t(bool c, int d, int l, char* s=NULL) :
+	dataNode_t(bool c, int l, int d, char* s=NULL) :
 		compressed(c),
 		dist(d),
 		length(l) {
 		nextNode = NULL;
+		for (int i = 0; i < l; i++)
+			byteString += s[i];
+	}
+	void makeBytes() {
 		//make the data bytes
 		if (compressed) {
 			//make 3 byte compression refernece
 			//guarentee first bit is 0 as per required, 
-			byteString += char((uint8_t)(l) >> 1);
+			byteString += char((uint8_t)(length) >> 1);
 			//get first 7 bits of distance along with last bit of length
 			char byte2 = (uint8_t)((0xEF00 & dist) >> 8);
 			//first bit of byte 2 is just the even/odd of length
-			byte2 |= (l % 2 ? 0x80 : 0x00);
+			byte2 |= (length % 2 ? 0x80 : 0x00);
 			byteString += byte2;
 			//last 8 bits of distance
 			byteString += char(0xFF & dist);
 		}
 		else {
-			//make 2 + data length compression byte
-			//first byte is 1 + first 7 bits of length
-			byteString += char(0x80 | ((uint16_t)(0xEF00 & l) >> 8));
+			//make 2 byte length byte + data
 			//second byte is last 8 bits of length
-			byteString += char((uint16_t)(0xFF & 1));
-			for (int i = 0; i < l; i++)
-				byteString += s[i];
+			byteString = char((uint16_t)(0xFF & length)) + byteString;
+			//first byte is 1 + first 7 bits of length
+			byteString = char(0x80 | ((uint16_t)(0xEF00 & length) >> 8)) + byteString;
 		}
 	}
 };
