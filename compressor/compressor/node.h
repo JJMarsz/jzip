@@ -52,8 +52,10 @@ struct dataNode_t {
 		dist(d),
 		length(l) {
 		nextNode = NULL;
-		for (int i = 0; i < l; i++)
-			byteString += s[i];
+		if (s != NULL) {
+			for (int i = 0; i < l; i++)
+				byteString += s[i];
+		}
 	}
 	void makeBytes() {
 		//make the data bytes
