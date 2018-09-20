@@ -116,7 +116,9 @@ int compare(listNode_t* test, listNode_t* curr) {
 	Both length and distance use bits to represent the bytes of each
 	respective field. Length has a constant 3 bytes added onto it
 	because the value that is being refered to cannot be smaller
-	than 3 bytes otherwise it wouldn't be compressing
+	than 3 bytes otherwise it wouldn't be compressing. Distance
+	will be distance from the start of this compression byte
+	to the start of the reference set of bytes
 
 	If bit flag is set to 1 to represent raw data
 
