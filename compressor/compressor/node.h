@@ -65,17 +65,30 @@ private:
 	listNode_t* tail;
 	char c;
 };
+/*
+	Node structure used in the construction of the Huffman Tree
+*/
 struct node_t {
-	shared_ptr<node_t> m_left;
-	shared_ptr<node_t> m_right;
+	node_t* m_left;
+	node_t* m_right;
 	int m_freq;
 	char m_val;
-	node_t(char word = ' ', int freq = 0, shared_ptr<node_t> left = NULL, shared_ptr<node_t> right = NULL) :
+	node_t(char word = ' ', int freq = 0, node_t* left = NULL, node_t* right = NULL) :
 		m_freq(freq),
 		m_val(word),
 		m_left(left),
 		m_right(right) {}
 };
+/*
+	Used as a custom comparison for the min heap in the Huffman encoding
+*/
+class comparison{
+public:
+	bool operator() (const node_t* lhs, const node_t* rhs) const{
+		return (lhs->m_freq<rhs->m_freq);
+	}
+};
+
 /*
 	Returns the length of similarity between curr and test
 */
