@@ -65,6 +65,22 @@ private:
 	listNode_t* tail;
 	char c;
 };
+
+/*
+	Records how many consecutive bits and the bytes itself
+*/
+struct byte_t {
+	uint8_t length;
+	char* bytes;
+	byte_t(int l) :
+		length(l) {
+		bytes = new char[ceil(((float)(length))/8.0)];
+	}
+	~byte_t() {
+		delete[] bytes;
+	}
+};
+
 /*
 	Node structure used in the construction of the Huffman Tree
 */
@@ -146,7 +162,6 @@ int compare(listNode_t* test, listNode_t* curr) {
 
 	Contains the raw data that will be used in a reference
 */
-
 void makeBytes(bool compressed, int length, string& odata, char* idata = NULL, int dist=0) {
 	//make the data bytes
 	if (compressed) {
