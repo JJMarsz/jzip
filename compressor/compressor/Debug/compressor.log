@@ -1,40 +1,7 @@
-﻿  Skipping... (no relevant changes detected)
-  stdafx.cpp
-  compressor.cpp
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(11): error C3646: 'byteString': unknown override specifier
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(57): error C2065: 'byteString': undeclared identifier
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(65): error C2065: 'byteString': undeclared identifier
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(70): error C2065: 'byteString': undeclared identifier
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(72): error C2065: 'byteString': undeclared identifier
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(77): error C2065: 'byteString': undeclared identifier
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(79): error C2065: 'byteString': undeclared identifier
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(136): error C2143: syntax error: missing ';' before '<'
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(136): error C2238: unexpected token(s) preceding ';'
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(137): error C2143: syntax error: missing ';' before '<'
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(137): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(137): error C2238: unexpected token(s) preceding ';'
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(140): error C2061: syntax error: identifier 'shared_ptr'
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(143): error C2065: 'left': undeclared identifier
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(144): error C2065: 'right': undeclared identifier
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(143): error C2614: 'node_t': illegal member initialization: 'm_left' is not a base or member
-c:\users\jj\desktop\jzip\compressor\compressor\node.h(144): error C2614: 'node_t': illegal member initialization: 'm_right' is not a base or member
-c:\users\jj\desktop\jzip\compressor\compressor\compressor.cpp(33): error C2039: 'm_left': is not a member of 'node_t'
-  c:\users\jj\desktop\jzip\compressor\compressor\node.h(135): note: see declaration of 'node_t'
-c:\users\jj\desktop\jzip\compressor\compressor\compressor.cpp(33): error C2039: 'm_right': is not a member of 'node_t'
-  c:\users\jj\desktop\jzip\compressor\compressor\node.h(135): note: see declaration of 'node_t'
-c:\users\jj\desktop\jzip\compressor\compressor\compressor.cpp(44): error C2039: 'm_left': is not a member of 'node_t'
-  c:\users\jj\desktop\jzip\compressor\compressor\node.h(135): note: see declaration of 'node_t'
-c:\users\jj\desktop\jzip\compressor\compressor\compressor.cpp(47): error C2039: 'm_right': is not a member of 'node_t'
-  c:\users\jj\desktop\jzip\compressor\compressor\node.h(135): note: see declaration of 'node_t'
-c:\users\jj\desktop\jzip\compressor\compressor\compressor.cpp(52): error C2039: 'm_left': is not a member of 'node_t'
-  c:\users\jj\desktop\jzip\compressor\compressor\node.h(135): note: see declaration of 'node_t'
-c:\users\jj\desktop\jzip\compressor\compressor\compressor.cpp(52): error C2039: 'm_right': is not a member of 'node_t'
-  c:\users\jj\desktop\jzip\compressor\compressor\node.h(135): note: see declaration of 'node_t'
-c:\users\jj\desktop\jzip\compressor\compressor\compressor.cpp(58): error C2039: 'm_right': is not a member of 'node_t'
-  c:\users\jj\desktop\jzip\compressor\compressor\node.h(135): note: see declaration of 'node_t'
-c:\users\jj\desktop\jzip\compressor\compressor\compressor.cpp(58): error C2660: 'getWord': function does not take 2 arguments
-c:\users\jj\desktop\jzip\compressor\compressor\compressor.cpp(60): error C2039: 'm_left': is not a member of 'node_t'
-  c:\users\jj\desktop\jzip\compressor\compressor\node.h(135): note: see declaration of 'node_t'
-c:\users\jj\desktop\jzip\compressor\compressor\compressor.cpp(60): error C2660: 'getWord': function does not take 2 arguments
+﻿  compressor.cpp
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\node.h(109): warning C4244: 'initializing': conversion from 'double' to 'unsigned int', possible loss of data
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(205): warning C4018: '<': signed/unsigned mismatch
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(232): warning C4018: '<': signed/unsigned mismatch
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(355): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(357): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  compressor.vcxproj -> C:\Users\Jacob\Desktop\Projects\compressor\compressor\Debug\compressor.exe

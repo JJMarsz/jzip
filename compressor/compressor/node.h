@@ -2,6 +2,38 @@
 #define NODE_H
 
 #include <memory>
+#include <string>
+#include <mutex>
+#include <thread>
+#include <condition_variable>
+#include <iostream>
+#include <fstream>
+#include <unordered_map>
+#include <stack>
+#include <bitset>
+
+using namespace std;
+
+
+#define DEBUG			1
+
+#define BITSET_SIZE		20
+#define BLOCK_SIZE		32
+#define KB				1024
+#define MAX_THREADS		1
+
+mutex ifileLock;	//Protects the input file
+ifstream ifile;		//The input file
+
+mutex ofileLock;	//Protects the output file
+ofstream ofile;		//The output file
+
+mutex threadLock;				//Protects the thread relevant info
+condition_variable threadCV;	//Used to notify the main thread that a compression thread has completed
+int threadCount;				//Number of running compress/decompress threads
+
+mutex threadDestructLock;		//Protects other threads from trying to destruct at the same time as another
+int threadDestructIndex;		//The index at which the current destructing thread is at
 /*
 	Represnts a byte in memory with pointers to the previous byte and
 	previous occurence of this same byte
@@ -72,7 +104,7 @@ private:
 struct byte_t {
 	uint8_t length;
 	char* bytes;
-	byte_t(int l) :
+	byte_t(int l=0) :
 		length(l) {
 		bytes = new char[ceil(((float)(length))/8.0)];
 	}
@@ -187,5 +219,39 @@ void makeBytes(bool compressed, int length, string& odata, char* idata = NULL, i
 		//first byte is 1 + first 7 bits of length
 		odata = char(0x80 | ((uint16_t)(0xEF00 & length) >> 8)) + odata;
 	}
+}
+/*
+	Populates a map with the encoding of every leaf in the Huffman tree
+*/
+void getEncoded(node_t* root, unordered_map<char, byte_t> &map, stack<bitset<1>> path) {
+	if (root->m_left == NULL && root->m_right == NULL) {
+		bitset<8> bits;
+		byte_t byte(path.size());
+		//invert the stack
+		stack<bitset<1>> orderedPath;
+		while (!path.empty()) {
+			orderedPath.push(path.top());
+			path.pop();
+		}
+		//append bits accordingly
+		int index = 0;
+		for (int i = 0; i < byte.length; i++) {
+			if (i != 0 && i % 8 == 0) {
+				byte.bytes[index] = char(bits.to_ulong());
+				bits.reset();
+				index++;
+			}
+			bits[i % 8] = path.top()[0];
+			orderedPath.pop();
+		}
+		map[root->m_val] = byte;
+		return;
+	}
+	path.push(bitset<1>(0));
+	getEncoded(root->m_left, map, path);
+	path.pop();
+	path.push(bitset<1>(1));
+	getEncoded(root->m_right, map, path);
+	path.pop();
 }
 #endif 
