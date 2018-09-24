@@ -1,7 +1,7 @@
 ﻿  compressor.cpp
-c:\users\jacob\desktop\projects\compressor\compressor\compressor\node.h(109): warning C4244: 'initializing': conversion from 'double' to 'unsigned int', possible loss of data
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\node.h(102): warning C4244: 'initializing': conversion from 'double' to 'unsigned int', possible loss of data
 c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(205): warning C4018: '<': signed/unsigned mismatch
 c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(232): warning C4018: '<': signed/unsigned mismatch
 c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(355): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
-c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(357): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\jacob\desktop\projects\compressor\compressor\compressor\compressor.cpp(358): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   compressor.vcxproj -> C:\Users\Jacob\Desktop\Projects\compressor\compressor\Debug\compressor.exe

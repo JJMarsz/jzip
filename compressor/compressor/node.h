@@ -48,6 +48,8 @@ struct listNode_t {
 		index(i),
 		byte(ch) {
 		crucial = false;
+		prevChar = NULL;
+		prevIndex = NULL;
 	}
 };
 /*
@@ -55,9 +57,8 @@ struct listNode_t {
 */
 class linkedList_t {
 public:
-	linkedList_t(listNode_t* h = NULL, listNode_t* t = NULL, char cc = 0x00) :
+	linkedList_t(listNode_t* h = NULL, char cc = 0x00) :
 		head(h),
-		tail(t),
 		c(cc) {}
 	~linkedList_t() {
 		listNode_t* temp = head;
@@ -70,7 +71,7 @@ public:
 	//gets most recent addition
 	listNode_t* get() { return head; }
 	listNode_t* find(int i) {
-		listNode_t* sentinal = tail;
+		listNode_t* sentinal = head;
 		while (sentinal != NULL) {
 			if (sentinal->index == i)
 				break;
@@ -82,19 +83,11 @@ public:
 	void insert(int i) {
 		//empty list
 		listNode_t* node = new listNode_t(i, c);
-		if (tail == NULL) {
-			tail = node;
-			head = node;
-		}
-		//atleast one node
-		else {
-			node->prevIndex = head;
-			head = node;
-		}
+		node->prevIndex = head;
+		head = node;
 	}
 private:
 	listNode_t* head;
-	listNode_t* tail;
 	char c;
 };
 
@@ -241,7 +234,7 @@ void getEncoded(node_t* root, unordered_map<char, byte_t> &map, stack<bitset<1>>
 				bits.reset();
 				index++;
 			}
-			bits[i % 8] = path.top()[0];
+			bits[i % 8] = orderedPath.top()[0];
 			orderedPath.pop();
 		}
 		map[root->m_val] = byte;
