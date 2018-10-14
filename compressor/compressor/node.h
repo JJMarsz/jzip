@@ -101,9 +101,6 @@ struct byte_t {
 		length(l) {
 		bytes = new char[ceil(((float)(length))/8.0)];
 	}
-	~byte_t() {
-		delete[] bytes;
-	}
 };
 
 /*
